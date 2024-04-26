@@ -319,8 +319,14 @@ static int slash_csp_program(struct slash * slash) {
 	snprintf(vmem_name, 5, "fl%u", slot);
 
 	printf("  Requesting VMEM name: %s...\n", vmem_name);
-
-	vmem_list_t vmem = vmem_client_find(node, slash_dfl_timeout, 1, vmem_name, strlen(vmem_name));
+	
+	vmem_list_t vmem = {0};
+	if (vmem_client_find(node, slash_dfl_timeout, &vmem, 1, vmem_name, strlen(vmem_name)) < 0)
+	{
+		printf("Failed to find vmem file\n");
+        optparse_del(parser);
+		return SLASH_EINVAL;
+	}
 	if (vmem.size == 0) {
 		printf("Failed to find vmem on subsystem\n");
         optparse_del(parser);
@@ -491,7 +497,13 @@ static int slash_sps(struct slash * slash) {
 	snprintf(vmem_name, 5, "fl%u", to);
 	printf("  Requesting VMEM name: %s...\n", vmem_name);
 
-	vmem_list_t vmem = vmem_client_find(node, slash_dfl_timeout, 1, vmem_name, strlen(vmem_name));
+	vmem_list_t vmem = {0};
+	if (vmem_client_find(node, slash_dfl_timeout, &vmem, 1, vmem_name, strlen(vmem_name)) < 0)
+	{
+		printf("Failed to find vmem file\n");
+        optparse_del(parser);
+		return SLASH_EINVAL;
+	}
 	if (vmem.size == 0) {
 		printf("Failed to find vmem on subsystem\n");
         optparse_del(parser);
