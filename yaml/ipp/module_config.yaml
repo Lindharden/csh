@@ -1,13 +1,17 @@
 # Use following keys for type  #
 #   bool    = 2                #
-#   integer = 3                #
+#   int     = 3                #
 #   float   = 4                #
 #   string  = 5                #
 
-- key: "flip_percent"
-  type: 4
-  value: 0.50
+- key: effort
+  type: 3
+  value: 7
 
-- key: "flip_amount"
+- key: resampling
   type: 3
   value: 1
+
+- key: distance
+  type: 4
+  value: 1.0
