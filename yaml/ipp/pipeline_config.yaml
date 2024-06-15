@@ -1,3 +1,7 @@
 - order: 1
   param_id: 1
+  name: demosaic
+
+- order: 2
+  param_id: 1
   name: encoder
