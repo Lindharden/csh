@@ -15,3 +15,6 @@
 [submodule "lib/csp_ippc"]
 	path = lib/csp_ippc
 	url = git@github.com:Lindharden/csp_ippc.git
+[submodule "lib/param"]
+	path = lib/param
+	url = git@github.com:Lindharden/libparam.git
