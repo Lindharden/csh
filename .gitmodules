@@ -2,10 +2,6 @@
   path = lib/csp
   url = https://github.com/spaceinventor/libcsp
   branch = master     
-[submodule "lib/libparam"]
-  path = lib/param
-  url = https://github.com/spaceinventor/libparam
-  branch = addin
 [submodule "lib/slash"]
   path = lib/slash
   url = https://github.com/spaceinventor/slash
